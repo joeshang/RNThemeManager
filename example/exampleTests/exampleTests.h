@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Ryan Nystrom. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface exampleTests : SenTestCase
+@interface exampleTests : XCTestCase
 
 @end

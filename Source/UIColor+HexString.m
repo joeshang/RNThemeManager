@@ -10,7 +10,7 @@
 
 @implementation UIColor(HexString)
 
-+ (UIColor *) colorWithHexString: (NSString *) hexString {
++ (UIColor *) rn_colorWithHexString: (NSString *) hexString {
     NSString *colorString = [[hexString stringByReplacingOccurrencesOfString: @"#" withString: @""] uppercaseString];
     CGFloat alpha, red, blue, green;
     switch ([colorString length]) {

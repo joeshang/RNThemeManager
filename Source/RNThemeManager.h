@@ -28,7 +28,8 @@ extern NSString * const RNThemeManagerDidChangeThemes;
 // Return a UIColor from a hex color stored in theme file
 - (UIColor *)colorForKey:(NSString *)key;
 
-// Return a UIImage for an image name stored in theme file
+// Return a UIImage by key with theme directory prefix
+// Image name format: theme/key, image in different theme has common key
 - (UIImage *)imageForKey:(NSString *)key;
 
 // Change the theme name, should not include .plist extension

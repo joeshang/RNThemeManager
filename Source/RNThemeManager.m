@@ -10,6 +10,8 @@
 #import "UIColor+HexString.h"
 
 NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes";
+NSString * const RNThemeManagerThemeDirectory = @"";
+NSString * const RNThemeManagerKeyForThemeName = @"com.joeshang.RNThemeManager.ThemeName";
 
 @interface RNThemeManager ()
 
@@ -35,7 +37,7 @@ NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes
 - (id)init {
     if (self = [super init]) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *themeName = [defaults objectForKey:@"com.whoisryannystrom.RNThemeManager.defaulttheme"];
+        NSString *themeName = [defaults objectForKey:RNThemeManagerKeyForThemeName];
         if (! themeName) {
             themeName = @"default";
         }
@@ -59,7 +61,7 @@ NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes
     _currentThemeName = currentThemeName;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:currentThemeName forKey:@"com.whoisryannystrom.RNThemeManager.defaulttheme"];
+    [defaults setObject:currentThemeName forKey:RNThemeManagerKeyForThemeName];
     [defaults synchronize];
 }
 
@@ -71,7 +73,9 @@ NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes
     }
     
     self.currentThemeName = themeName;
-    NSString *path = [[NSBundle mainBundle] pathForResource:self.currentThemeName ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:self.currentThemeName
+                                                     ofType:@"plist"
+                                                inDirectory:RNThemeManagerThemeDirectory];
     NSDictionary *styles = [NSDictionary dictionaryWithContentsOfFile:path];
     
     // if our theme inherits from another, merge
@@ -83,7 +87,9 @@ NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes
 }
 
 - (NSDictionary *)inheritedThemeWithParentTheme:(NSString *)parentThemeName childTheme:(NSDictionary *)childTheme {
-    NSString *path = [[NSBundle mainBundle] pathForResource:parentThemeName ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:parentThemeName
+                                                     ofType:@"plist"
+                                                inDirectory:RNThemeManagerThemeDirectory];
     NSMutableDictionary *parent = [[NSDictionary dictionaryWithContentsOfFile:path] mutableCopy];
     
     // merge child into parent overriding parent values
@@ -128,24 +134,19 @@ NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes
     }
     
     if (hexString) {
-        return [UIColor colorWithHexString:hexString];
+        return [UIColor rn_colorWithHexString:hexString];
     }
     return nil;
 }
 
 #pragma mark - Images
 
-- (UIImage *)imageForKey:(NSString *)key {
-    NSString *imageName = self.styles[key];
+- (UIImage *)imageForKey:(NSString *)key
+{
+    NSString *imageName = [NSString stringWithFormat:@"%@/%@/%@",
+                           RNThemeManagerThemeDirectory, self.currentThemeName, key];
     
-    while (self.styles[imageName]) {
-        imageName = self.styles[imageName];
-    }
-    
-    if (imageName) {
-        return [UIImage imageNamed:imageName];
-    }
-    return nil;
+    return [UIImage imageNamed:imageName];
 }
 
 @end

@@ -18,7 +18,6 @@
 		8636D03316C1A752006BB160 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8636D03216C1A752006BB160 /* Default-568h@2x.png */; };
 		8636D03616C1A752006BB160 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8636D03416C1A752006BB160 /* MainStoryboard.storyboard */; };
 		8636D03916C1A752006BB160 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D03816C1A752006BB160 /* RNViewController.m */; };
-		8636D04116C1A753006BB160 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8636D04016C1A753006BB160 /* SenTestingKit.framework */; };
 		8636D04216C1A753006BB160 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8636D01C16C1A752006BB160 /* UIKit.framework */; };
 		8636D04316C1A753006BB160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8636D01E16C1A752006BB160 /* Foundation.framework */; };
 		8636D04B16C1A753006BB160 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8636D04916C1A753006BB160 /* InfoPlist.strings */; };
@@ -63,8 +62,7 @@
 		8636D03516C1A752006BB160 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		8636D03716C1A752006BB160 /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
 		8636D03816C1A752006BB160 /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
-		8636D03F16C1A753006BB160 /* exampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8636D04016C1A753006BB160 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8636D03F16C1A753006BB160 /* exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = exampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8636D04816C1A753006BB160 /* exampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "exampleTests-Info.plist"; sourceTree = "<group>"; };
 		8636D04A16C1A753006BB160 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8636D04C16C1A753006BB160 /* exampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exampleTests.h; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8636D04116C1A753006BB160 /* SenTestingKit.framework in Frameworks */,
 				8636D04216C1A753006BB160 /* UIKit.framework in Frameworks */,
 				8636D04316C1A753006BB160 /* Foundation.framework in Frameworks */,
 			);
@@ -136,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				8636D01916C1A752006BB160 /* example.app */,
-				8636D03F16C1A753006BB160 /* exampleTests.octest */,
+				8636D03F16C1A753006BB160 /* exampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,7 +144,6 @@
 				8636D01C16C1A752006BB160 /* UIKit.framework */,
 				8636D01E16C1A752006BB160 /* Foundation.framework */,
 				8636D02016C1A752006BB160 /* CoreGraphics.framework */,
-				8636D04016C1A753006BB160 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,8 +256,8 @@
 			);
 			name = exampleTests;
 			productName = exampleTests;
-			productReference = 8636D03F16C1A753006BB160 /* exampleTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 8636D03F16C1A753006BB160 /* exampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -270,6 +266,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = RN;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ryan Nystrom";
 			};
@@ -526,13 +523,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "exampleTests/exampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -543,13 +540,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "example/example-Prefix.pch";
 				INFOPLIST_FILE = "exampleTests/exampleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
