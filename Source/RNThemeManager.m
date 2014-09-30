@@ -10,7 +10,7 @@
 #import "UIColor+HexString.h"
 
 NSString * const RNThemeManagerDidChangeThemes = @"RNThemeManagerDidChangeThemes";
-NSString * const RNThemeManagerThemeDirectory = @"";
+NSString * const RNThemeManagerThemeDirectory = @"Theme";
 NSString * const RNThemeManagerKeyForThemeName = @"com.joeshang.RNThemeManager.ThemeName";
 
 @interface RNThemeManager ()

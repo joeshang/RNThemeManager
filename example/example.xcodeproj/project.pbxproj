@@ -22,9 +22,6 @@
 		8636D04316C1A753006BB160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8636D01E16C1A752006BB160 /* Foundation.framework */; };
 		8636D04B16C1A753006BB160 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8636D04916C1A753006BB160 /* InfoPlist.strings */; };
 		8636D04E16C1A753006BB160 /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D04D16C1A753006BB160 /* exampleTests.m */; };
-		8636D07316C1A798006BB160 /* default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8636D07216C1A798006BB160 /* default.plist */; };
-		8636D07516C1A7A5006BB160 /* hicontrast.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8636D07416C1A7A5006BB160 /* hicontrast.plist */; };
-		8636D07716C1A7AE006BB160 /* locontrast.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8636D07616C1A7AE006BB160 /* locontrast.plist */; };
 		8636D08916C1B4AB006BB160 /* RNThemeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D07916C1B4AB006BB160 /* RNThemeButton.m */; };
 		8636D08A16C1B4AB006BB160 /* RNThemedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D07B16C1B4AB006BB160 /* RNThemedImageView.m */; };
 		8636D08B16C1B4AB006BB160 /* RNThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D07D16C1B4AB006BB160 /* RNThemeLabel.m */; };
@@ -33,6 +30,7 @@
 		8636D08E16C1B4AB006BB160 /* RNThemeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D08316C1B4AB006BB160 /* RNThemeTextView.m */; };
 		8636D08F16C1B4AB006BB160 /* RNThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D08616C1B4AB006BB160 /* RNThemeView.m */; };
 		8636D09016C1B4AB006BB160 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8636D08816C1B4AB006BB160 /* UIColor+HexString.m */; };
+		D290288B19DA8F1B0093AF33 /* Theme in Resources */ = {isa = PBXBuildFile; fileRef = D290288A19DA8F1B0093AF33 /* Theme */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +65,6 @@
 		8636D04A16C1A753006BB160 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8636D04C16C1A753006BB160 /* exampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = exampleTests.h; sourceTree = "<group>"; };
 		8636D04D16C1A753006BB160 /* exampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = exampleTests.m; sourceTree = "<group>"; };
-		8636D07216C1A798006BB160 /* default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default.plist; sourceTree = "<group>"; };
-		8636D07416C1A7A5006BB160 /* hicontrast.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hicontrast.plist; sourceTree = "<group>"; };
-		8636D07616C1A7AE006BB160 /* locontrast.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = locontrast.plist; sourceTree = "<group>"; };
 		8636D07816C1B4AB006BB160 /* RNThemeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNThemeButton.h; sourceTree = "<group>"; };
 		8636D07916C1B4AB006BB160 /* RNThemeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNThemeButton.m; sourceTree = "<group>"; };
 		8636D07A16C1B4AB006BB160 /* RNThemedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNThemedImageView.h; sourceTree = "<group>"; };
@@ -87,6 +82,7 @@
 		8636D08616C1B4AB006BB160 /* RNThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNThemeView.m; sourceTree = "<group>"; };
 		8636D08716C1B4AB006BB160 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
 		8636D08816C1B4AB006BB160 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		D290288A19DA8F1B0093AF33 /* Theme */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Theme; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +111,6 @@
 		8636D01016C1A752006BB160 = {
 			isa = PBXGroup;
 			children = (
-				8636D07616C1A7AE006BB160 /* locontrast.plist */,
-				8636D07416C1A7A5006BB160 /* hicontrast.plist */,
-				8636D07216C1A798006BB160 /* default.plist */,
 				8636D05716C1A788006BB160 /* RNThemeManager */,
 				8636D02216C1A752006BB160 /* example */,
 				8636D04616C1A753006BB160 /* exampleTests */,
@@ -156,6 +149,7 @@
 				8636D03416C1A752006BB160 /* MainStoryboard.storyboard */,
 				8636D03716C1A752006BB160 /* RNViewController.h */,
 				8636D03816C1A752006BB160 /* RNViewController.m */,
+				D290288A19DA8F1B0093AF33 /* Theme */,
 				8636D02316C1A752006BB160 /* Supporting Files */,
 			);
 			path = example;
@@ -293,14 +287,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D290288B19DA8F1B0093AF33 /* Theme in Resources */,
 				8636D02716C1A752006BB160 /* InfoPlist.strings in Resources */,
 				8636D02F16C1A752006BB160 /* Default.png in Resources */,
 				8636D03116C1A752006BB160 /* Default@2x.png in Resources */,
 				8636D03316C1A752006BB160 /* Default-568h@2x.png in Resources */,
 				8636D03616C1A752006BB160 /* MainStoryboard.storyboard in Resources */,
-				8636D07316C1A798006BB160 /* default.plist in Resources */,
-				8636D07516C1A7A5006BB160 /* hicontrast.plist in Resources */,
-				8636D07716C1A7AE006BB160 /* locontrast.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

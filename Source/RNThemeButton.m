@@ -60,6 +60,10 @@
     if (self.textColorKey && (textColor = [[RNThemeManager sharedManager] colorForKey:self.textColorKey])) {
         [self setTitleColor:textColor forState:UIControlStateNormal];
     }
+    UIImage *image = nil;
+    if (self.imageKey && (image = [[RNThemeManager sharedManager] imageForKey:self.imageKey])) {
+        [self setImage:image forState:UIControlStateNormal];
+    }
     UIImage *backgroundImage = nil;
     if (self.backgroundImageKey && (backgroundImage = [[RNThemeManager sharedManager] imageForKey:self.backgroundImageKey])) {
         [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
